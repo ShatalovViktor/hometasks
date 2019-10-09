@@ -1,7 +1,22 @@
 import React from 'react'
 
-class ContactListHeader extends React.Component{
-
+/**
+ * Show header for contact list
+ */
+class ContactListHeader extends React.Component {
+  render () {
+    const { headerItems } = this.props
+    return (
+      <thead>
+        <tr>
+          { headerItems.map(item => (
+            <th key={item.id}>{item.label}</th>
+          ))
+          }
+        </tr>
+      </thead>
+    )
+  }
 }
 
 export default ContactListHeader
