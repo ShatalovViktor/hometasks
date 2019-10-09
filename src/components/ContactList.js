@@ -6,10 +6,12 @@ class ContactList extends React.Component {
   render () {
     const { headerItems, bodyItems } = this.props.listData
     return (
-      <table>
-        <ContactListHeader headerItems={headerItems} />
-        <ContactListBody bodyItems={bodyItems} />
-      </table>
+      <div style={{ margin: '0 auto', width: '25%'}}>
+        <table cellPadding={5} >
+          <ContactListHeader headerItems={headerItems} />
+          <ContactListBody bodyItems={bodyItems} />
+        </table>
+      </div>
     )
   }
 }

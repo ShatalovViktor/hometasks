@@ -58,7 +58,7 @@ class App extends React.Component {
 
   render () {
     return (
-      <div className="App">
+      <div className="App" style={{ width: '100%', position: 'relative' }}>
         <ContactList listData={this.state.listData} />
       </div>
     )
