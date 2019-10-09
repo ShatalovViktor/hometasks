@@ -4,12 +4,12 @@ import ContactListBody from './ContactListBody'
 
 class ContactList extends React.Component {
   render () {
-    const { headerItems, bodyItems } = this.props
+    const { headerItems, bodyItems } = this.props.listData
     return (
-      <React.Fragment>
+      <table>
         <ContactListHeader headerItems={headerItems} />
         <ContactListBody bodyItems={bodyItems} />
-      </React.Fragment>
+      </table>
     )
   }
 }
