@@ -1,6 +1,6 @@
 import React from 'react'
 import ContactList from './components/ContactList/ContactList'
-import ContactForm from './components/ContactForm'
+import ContactForm from './components/ContactForm/ContactForm'
 
 class App extends React.Component {
   state = {
