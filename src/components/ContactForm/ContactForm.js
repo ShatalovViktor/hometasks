@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import './ContactForm.css'
+import FormControllers from './FormControllers'
 
 class ContactForm extends React.Component {
   render () {
@@ -23,6 +24,7 @@ class ContactForm extends React.Component {
             <label>Phone</label>
             <input type='text' value='' />
           </div>
+          <FormControllers />
         </form>
       </div>
     )
