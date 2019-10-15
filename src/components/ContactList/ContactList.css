@@ -1,0 +1,7 @@
+.sidebar ul li {
+    list-style: none;
+    padding: 5px 0;
+}
+.sidebar ul li:hover {
+    cursor: pointer;
+}
