@@ -9,7 +9,7 @@ class ContactList extends React.Component {
     return (
       <ul>
         {contacts.map(contact => (
-          <ContactItem contact={contact} />
+          <ContactItem key={contact.id} contact={contact}  onContactClick={this.props.onContactClick} />
         ))}
       </ul>
     )
@@ -20,6 +20,7 @@ ContactList.propTypes = {
     surname: PropTypes.string,
     name: PropTypes.string
   })).isRequired,
+  onContactClick: PropTypes.func,
 }
 
 ContactList.defaultProps = {

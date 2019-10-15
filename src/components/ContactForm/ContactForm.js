@@ -10,19 +10,19 @@ class ContactForm extends React.Component {
         <form>
           <div className='formGroup'>
             <label>Surname</label>
-            <input type='text' value='' />
+            <input type='text' defaultValue='' />
           </div>
           <div className='formGroup'>
             <label>Name</label>
-            <input type='text' value='' />
+            <input type='text' defaultValue='' />
           </div>
           <div className='formGroup'>
             <label>Age</label>
-            <input type='text' value='' />
+            <input type='text' defaultValue='' />
           </div>
           <div className='formGroup'>
             <label>Phone</label>
-            <input type='text' value='' />
+            <input type='text' defaultValue='' />
           </div>
           <FormControllers />
         </form>

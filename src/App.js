@@ -36,13 +36,17 @@ class App extends React.Component {
     ]
   }
 
+  onContactClick = (contact) => {
+    console.log(contact);
+  }
+
   render () {
     return (
       <React.Fragment>
-        <div class="sidebar">
-          <ContactList contacts={this.state.contacts} />
+        <div className="sidebar">
+          <ContactList contacts={this.state.contacts} onContactClick={this.onContactClick}/>
         </div>
-        <div class="content">
+        <div className="content">
           <ContactForm />
         </div>
       </React.Fragment>
