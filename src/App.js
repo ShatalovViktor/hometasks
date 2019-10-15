@@ -33,11 +33,14 @@ class App extends React.Component {
         age: 376,
         phone: '+380639998811'
       },
-    ]
+    ],
+    selectedContact:{},
   }
 
   onContactClick = (contact) => {
-    console.log(contact);
+    this.setState({
+      selectedContact:contact,
+    })
   }
 
   render () {
@@ -47,7 +50,7 @@ class App extends React.Component {
           <ContactList contacts={this.state.contacts} onContactClick={this.onContactClick}/>
         </div>
         <div className="content">
-          <ContactForm />
+          <ContactForm contact={this.state.selectedContact}/>
         </div>
       </React.Fragment>
     )
