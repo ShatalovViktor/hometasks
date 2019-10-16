@@ -1,6 +1,11 @@
 body {
   margin: 0;
 }
+
+button:hover {
+  cursor: pointer;
+}
+
 /* The side navigation menu */
 .sidebar {
   margin: 0;

@@ -5,7 +5,8 @@ import ContactItem from '../ContactItem'
 
 class ContactForm extends React.Component {
   render () {
-    const { contact } = this.props;
+    const { contact } = this.props
+    const isEdit = !!contact.id
     return (
       <div className='form-container'>
         <form>
@@ -34,7 +35,14 @@ class ContactForm extends React.Component {
               <input type='text' defaultValue={contact.phone ? contact.phone : ''} />
             </label>
           </div>
-          {/*todo btns*/}
+          {isEdit ? (
+            <React.Fragment>
+              <button className='button'> Save </button>
+              <button className='deleteBtn'> Delete </button>
+            </React.Fragment>
+          ):(
+            <button className='button'> Add </button>
+          )}
         </form>
       </div>
     )
