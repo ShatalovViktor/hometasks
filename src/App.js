@@ -43,11 +43,18 @@ class App extends React.Component {
     })
   }
 
+  onAddClick = () => {
+    this.setState({
+      selectedContact:{},
+    })
+  }
+
   render () {
     return (
       <React.Fragment>
         <div className="sidebar">
           <ContactList contacts={this.state.contacts} onContactClick={this.onContactClick}/>
+          <button className='button' onClick={this.onAddClick}>Add</button>
         </div>
         <div className="content">
           <ContactForm contact={this.state.selectedContact}/>

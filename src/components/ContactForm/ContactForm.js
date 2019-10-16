@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import './ContactForm.css'
-import FormControllers from './FormControllers'
+import ContactItem from '../ContactItem'
 
 class ContactForm extends React.Component {
   render () {
@@ -34,11 +34,20 @@ class ContactForm extends React.Component {
               <input type='text' defaultValue={contact.phone ? contact.phone : ''} />
             </label>
           </div>
-          <FormControllers />
+          {/*todo btns*/}
         </form>
       </div>
     )
   }
+}
+
+ContactItem.propTypes = {
+  contact: PropTypes.shape({
+    surname: PropTypes.string,
+    name: PropTypes.string,
+    age: PropTypes.number,
+    phone: PropTypes.string,
+  }).isRequired,
 }
 
 export default ContactForm
