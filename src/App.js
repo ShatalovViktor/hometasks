@@ -43,6 +43,12 @@ class App extends React.Component {
     })
   }
 
+  createContact = (contact) => {
+    this.setState({
+      contacts: [...this.state.contacts, contact]
+    })
+  }
+
   onAddClick = () => {
     this.setState({
       selectedContact:{},
@@ -50,7 +56,12 @@ class App extends React.Component {
   }
 
   onDeleteContact = (contact) => {
-    console.log(contact)
+    this.setState({
+      contacts: this.state.contacts.filter((el) => el !== contact)
+    })
+    this.setState({
+      selectedContact:{},
+    })
   }
 
   onSaveContact = (contact) => {
@@ -58,7 +69,13 @@ class App extends React.Component {
   }
 
   onAddContact = (contact) => {
-    console.log(contact)
+    this.createContact( {
+      id: Date.now(),
+      name: contact.name,
+      surname: contact.surname,
+      age: Number(contact.age),
+      phone: contact.phone,
+    });
   }
 
   render () {
