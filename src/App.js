@@ -49,15 +49,35 @@ class App extends React.Component {
     })
   }
 
+  onDeleteContact = (contact) => {
+    console.log(contact)
+  }
+
+  onSaveContact = (contact) => {
+    console.log(contact)
+  }
+
+  onAddContact = (contact) => {
+    console.log(contact)
+  }
+
   render () {
     return (
       <React.Fragment>
         <div className="sidebar">
-          <ContactList contacts={this.state.contacts} onContactClick={this.onContactClick}/>
+          <ContactList
+            contacts={this.state.contacts}
+            onContactClick={this.onContactClick}
+          />
           <button className='button' onClick={this.onAddClick}>Add</button>
         </div>
         <div className="content">
-          <ContactForm contact={this.state.selectedContact}/>
+          <ContactForm
+            contact={this.state.selectedContact}
+            onDeleteContact={this.onDeleteContact}
+            onSaveContact={this.onSaveContact}
+            onAddContact={this.onAddContact}
+          />
         </div>
       </React.Fragment>
     )

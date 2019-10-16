@@ -4,12 +4,16 @@ import './ContactForm.css'
 import ContactItem from '../ContactItem'
 
 class ContactForm extends React.Component {
+  onSubmitFrom = (e) => {
+    e.preventDefault();
+  }
+
   render () {
-    const { contact } = this.props
+    const { contact, onSaveContact, onDeleteContact, onAddContact } = this.props
     const isEdit = !!contact.id
     return (
       <div className='form-container'>
-        <form>
+        <form method={'post'} onSubmit={this.onSubmitFrom}>
           <div className='formGroup'>
             <label>
               Surname:
@@ -37,11 +41,11 @@ class ContactForm extends React.Component {
           </div>
           {isEdit ? (
             <React.Fragment>
-              <button className='button'> Save </button>
-              <button className='deleteBtn'> Delete </button>
+              <button onClick={onSaveContact.bind(null, contact)} className='button'> Save</button>
+              <button onClick={onDeleteContact.bind(null, contact)} className='deleteBtn'> Delete</button>
             </React.Fragment>
-          ):(
-            <button className='button'> Add </button>
+          ) : (
+            <button onClick={onAddContact.bind(null, contact)} className='button'> Add </button>
           )}
         </form>
       </div>
@@ -56,6 +60,9 @@ ContactItem.propTypes = {
     age: PropTypes.number,
     phone: PropTypes.string,
   }).isRequired,
+  onSaveContact: PropTypes.func,
+  onDeleteContact: PropTypes.func,
+  onAddContact: PropTypes.func,
 }
 
 export default ContactForm
