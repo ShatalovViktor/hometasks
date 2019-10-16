@@ -6,12 +6,11 @@ import ContactItem from '../ContactItem'
 class ContactForm extends React.Component {
 
   state = {
-    surname:'',
+    surname: '',
     name: '',
     age: '',
     phone: ''
   }
-
 
   onInputChange = (e) => {
     this.setState({
@@ -20,13 +19,18 @@ class ContactForm extends React.Component {
   }
 
   onDeleteContact = (e) => {
-    this.setState({});
-    this.props.onDeleteContact(this.props.contact);
+    this.props.onDeleteContact(this.props.contact)
+    this.setState({
+      surname: '',
+      name: '',
+      age: '',
+      phone: ''
+    })
   }
 
   onSubmitFrom = (e) => {
-    e.preventDefault();
-    this.props.onAddContact(this.state);
+    e.preventDefault()
+    this.props.onAddContact(this.state)
   }
 
   render () {

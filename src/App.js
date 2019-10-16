@@ -34,33 +34,34 @@ class App extends React.Component {
         phone: '+380639998811'
       },
     ],
-    selectedContact:{},
+    selectedContact: {},
   }
 
   onContactClick = (contact) => {
     this.setState({
-      selectedContact:contact,
+      selectedContact: contact,
     })
   }
 
   createContact = (contact) => {
     this.setState({
-      contacts: [...this.state.contacts, contact]
+      contacts: [...this.state.contacts, contact],
+    })
+    this.setState({
+      selectedContact: contact,
     })
   }
 
   onAddClick = () => {
     this.setState({
-      selectedContact:{},
+      selectedContact: {},
     })
+    console.log(this.state.selectedContact)
   }
 
   onDeleteContact = (contact) => {
     this.setState({
-      contacts: this.state.contacts.filter((el) => el !== contact)
-    })
-    this.setState({
-      selectedContact:{},
+      contacts: this.state.contacts.filter((el) => el !== contact),
     })
   }
 
@@ -69,13 +70,13 @@ class App extends React.Component {
   }
 
   onAddContact = (contact) => {
-    this.createContact( {
+    this.createContact({
       id: Date.now(),
       name: contact.name,
       surname: contact.surname,
       age: Number(contact.age),
       phone: contact.phone,
-    });
+    })
   }
 
   render () {
