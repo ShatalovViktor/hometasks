@@ -7,8 +7,8 @@ class ContactForm extends React.Component {
 
   constructor (props) {
     super(props)
-
     this.state = {
+      id: props.contact.id ? props.contact.id : '',
       surname: props.contact.surname ? props.contact.surname : '',
       name: props.contact.name ? props.contact.name : '',
       age: props.contact.age ? props.contact.age : '',
@@ -18,6 +18,7 @@ class ContactForm extends React.Component {
 
   componentWillReceiveProps (nextProps, nextContext) {
     this.setState({
+      id: nextProps.contact.id ? nextProps.contact.id : '',
       surname: nextProps.contact.surname ? nextProps.contact.surname : '',
       name: nextProps.contact.name ? nextProps.contact.name : '',
       age: nextProps.contact.age ? nextProps.contact.age : '',
@@ -34,6 +35,7 @@ class ContactForm extends React.Component {
   onDeleteContact = (e) => {
     this.props.onDeleteContact(this.props.contact)
     this.setState({
+      id: '',
       surname: '',
       name: '',
       age: '',
@@ -43,13 +45,9 @@ class ContactForm extends React.Component {
 
   onSubmitFrom = (e) => {
     e.preventDefault()
-    this.props.onAddContact(this.state)
-    this.setState({
-      surname: '',
-      name: '',
-      age: '',
-      phone: ''
-    })
+    if (!this.state.id) {
+      this.props.onAddContact(this.state)
+    }
   }
 
   render () {
@@ -104,7 +102,7 @@ class ContactForm extends React.Component {
           </div>
           {isEdit ? (
             <React.Fragment>
-              <button onClick={onSaveContact.bind(null, contact)} className='button'> Save</button>
+              <button onClick={onSaveContact.bind(null, this.state)} className='button'> Save</button>
               <button onClick={this.onDeleteContact} className='deleteBtn'> Delete</button>
             </React.Fragment>
           ) : (

@@ -66,7 +66,17 @@ class App extends React.Component {
   }
 
   onSaveContact = (contact) => {
-    console.log(contact)
+    this.setState({
+      contacts: this.state.contacts.map((el) => {
+        return el !== contact ? el : {
+          id: contact.id,
+          surname: contact.surname,
+          name: contact.name,
+          age: contact.age,
+          phone: contact.phone,
+        }
+      })
+    });
   }
 
   onAddContact = (contact) => {
