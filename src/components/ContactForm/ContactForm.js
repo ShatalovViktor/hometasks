@@ -5,11 +5,24 @@ import ContactItem from '../ContactItem'
 
 class ContactForm extends React.Component {
 
-  state = {
-    surname: '',
-    name: '',
-    age: '',
-    phone: ''
+  constructor (props) {
+    super(props)
+
+    this.state = {
+      surname: props.contact.surname ? props.contact.surname : '',
+      name: props.contact.name ? props.contact.name : '',
+      age: props.contact.age ? props.contact.age : '',
+      phone: props.contact.phone ? props.contact.phone : '',
+    }
+  }
+
+  componentWillReceiveProps (nextProps, nextContext) {
+    this.setState({
+      surname: nextProps.contact.surname ? nextProps.contact.surname : '',
+      name: nextProps.contact.name ? nextProps.contact.name : '',
+      age: nextProps.contact.age ? nextProps.contact.age : '',
+      phone: nextProps.contact.phone ? nextProps.contact.phone : '',
+    })
   }
 
   onInputChange = (e) => {
@@ -50,7 +63,7 @@ class ContactForm extends React.Component {
               Surname:
               <input type='text'
                      name='surname'
-                     value={contact.surname ? contact.surname : this.state.surname}
+                     value={this.state.surname}
                      onChange={this.onInputChange}
               />
             </label>
@@ -62,7 +75,7 @@ class ContactForm extends React.Component {
               <input
                 type='text'
                 name='name'
-                value={contact.name ? contact.name : this.state.name}
+                value={this.state.name}
                 onChange={this.onInputChange}
               />
             </label>
@@ -73,7 +86,7 @@ class ContactForm extends React.Component {
               <input
                 type='text'
                 name='age'
-                value={contact.age ? contact.age : this.state.age}
+                value={this.state.age}
                 onChange={this.onInputChange}
               />
             </label>
@@ -84,7 +97,7 @@ class ContactForm extends React.Component {
               <input
                 type='text'
                 name='phone'
-                value={contact.phone ? contact.phone : this.state.phone}
+                value={this.state.phone}
                 onChange={this.onInputChange}
               />
             </label>
