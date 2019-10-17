@@ -31,6 +31,12 @@ class ContactForm extends React.Component {
   onSubmitFrom = (e) => {
     e.preventDefault()
     this.props.onAddContact(this.state)
+    this.setState({
+      surname: '',
+      name: '',
+      age: '',
+      phone: ''
+    })
   }
 
   render () {
