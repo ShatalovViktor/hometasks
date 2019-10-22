@@ -5,12 +5,20 @@ class App extends React.Component {
 
   constructor (props) {
     super(props)
-    this.state = {
-      notes: [{
-        title: 'Введите название заметки',
-        text: ''
-      }]
+    const notesFromStorage = localStorage.getItem('notes')
+    if (notesFromStorage === null) {
+      this.state = {
+        notes: [{
+          title: 'Введите название заметки',
+          text: ''
+        }]
+      }
+    } else {
+      this.state = {
+        notes: notesFromStorage
+      }
     }
+
   }
 
   getEmptyNote () {
