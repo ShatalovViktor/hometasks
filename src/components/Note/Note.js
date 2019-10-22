@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import './Note.css'
 
 class Note extends React.Component {
   constructor(props){
@@ -18,10 +19,10 @@ class Note extends React.Component {
 
   render () {
     return (
-      <React.Fragment>
+      <div className={'note'}>
         <input type='text' name='title' value={this.state.title} onChange={this.onChange} />
         <textarea name='text' value={this.state.text} onChange={this.onChange} />
-      </React.Fragment>
+      </div>
     )
   }
 }

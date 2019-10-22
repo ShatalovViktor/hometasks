@@ -1,0 +1,9 @@
+.note {
+    width: 200px;
+    float: left;
+    padding: 10px;
+}
+
+.note input, textarea {
+    width: 100%;
+}

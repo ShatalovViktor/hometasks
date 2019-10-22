@@ -1,5 +1,5 @@
 import React from 'react'
-import Note from './Note'
+import Note from './Note/Note'
 import PropTypes from 'prop-types'
 
 class NotesList extends React.Component {
