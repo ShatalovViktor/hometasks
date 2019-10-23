@@ -8,10 +8,7 @@ class App extends React.Component {
     const notesFromStorage = localStorage.getItem('notes')
     if (notesFromStorage === null) {
       this.state = {
-        notes: [{
-          title: 'Введите название заметки',
-          text: ''
-        }]
+        notes: [this.getEmptyNote()]
       }
     } else {
       this.state = {
@@ -25,6 +22,7 @@ class App extends React.Component {
     return {
       title: 'Введите название заметки',
       text: '',
+      id: Date.now(),
     }
   }
 
@@ -33,6 +31,9 @@ class App extends React.Component {
         notes: [...this.state.notes, this.getEmptyNote()]
       }
     )
+    let notesFromStorage = JSON.parse(localStorage.getItem('notes'));
+    notesFromStorage.push(this.getEmptyNote());
+    localStorage.setItem('notes', JSON.stringify(notesFromStorage));
   }
 
   render () {

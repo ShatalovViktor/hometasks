@@ -12,13 +12,8 @@ class Note extends React.Component {
   }
 
   onChange = (e) => {
-    let id = this.state.id
-    if (id === undefined) {
-      id = Date.now()
-    }
     this.setState({
       [e.target.name]: e.target.value,
-      id: id
     })
   }
 
