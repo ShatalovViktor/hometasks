@@ -7,8 +7,8 @@ class NotesList extends React.Component {
     const { notes } = this.props
     return (
       <div>
-        { notes.map((note, index )=> (
-          <Note key={index} note={note} onDeleteNote={this.props.onDeleteNote}/>
+        { notes.map((note)=> (
+          <Note key={note.id} note={note} onDeleteNote={this.props.onDeleteNote}/>
         )) }
       </div>
     )
