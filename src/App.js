@@ -15,7 +15,7 @@ class App extends React.Component {
       }
     } else {
       this.state = {
-        notes: notesFromStorage
+        notes: JSON.parse(notesFromStorage)
       }
     }
 
@@ -36,7 +36,6 @@ class App extends React.Component {
   }
 
   render () {
-    console.log(this.state.notes)
     return (
       <React.Fragment>
         <div className="topnav">
