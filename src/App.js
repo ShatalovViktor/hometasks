@@ -36,14 +36,23 @@ class App extends React.Component {
     localStorage.setItem('notes', JSON.stringify(notesFromStorage));
   }
 
+  onDeleteNote = (note) => {
+    this.setState({
+      notes: this.state.notes.filter((el) => el !== note),
+    });
+    // let notesFromStorage = JSON.parse(localStorage.getItem('notes'))
+    // notesFromStorage = notesFromStorage.map((noteStore) => noteStore.id === nextState.id ? nextState : noteStore)
+  }
+
   render () {
+    console.log(this.state.notes)
     return (
       <React.Fragment>
         <div className="topnav">
           <button onClick={this.onAddClick}>Add</button>
         </div>
         <div>
-          <NotesList notes={this.state.notes} />
+          <NotesList notes={this.state.notes} onDeleteNote={this.onDeleteNote}/>
 
         </div>
       </React.Fragment>

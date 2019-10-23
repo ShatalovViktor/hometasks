@@ -8,7 +8,7 @@ class NotesList extends React.Component {
     return (
       <div>
         { notes.map((note, index )=> (
-          <Note key={index} note={note} />
+          <Note key={index} note={note} onDeleteNote={this.props.onDeleteNote}/>
         )) }
       </div>
     )
@@ -20,7 +20,8 @@ NotesList.propTypes = {
     id: PropTypes.number,
     label: PropTypes.string,
     text: PropTypes.string,
-  }).isRequired)
+  }).isRequired),
+  onDeleteNote: PropTypes.func,
 }
 
 export default NotesList

@@ -31,6 +31,7 @@ class Note extends React.Component {
   render () {
     return (
       <div className={'note'}>
+        <button className="deleteButton" onClick={this.props.onDeleteNote.bind(null, this.state)}>-</button>
         <input type='text' name='title' value={this.state.title} onChange={this.onChange} />
         <textarea name='text' value={this.state.text} onChange={this.onChange} />
       </div>
