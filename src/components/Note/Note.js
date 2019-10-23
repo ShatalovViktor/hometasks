@@ -3,8 +3,8 @@ import PropTypes from 'prop-types'
 import './Note.css'
 
 class Note extends React.Component {
-  constructor(props){
-    super(props);
+  constructor (props) {
+    super(props)
 
     this.state = {
       ...props.note
@@ -12,9 +12,25 @@ class Note extends React.Component {
   }
 
   onChange = (e) => {
+    let id = this.state.id
+    if (id === undefined) {
+      id = Date.now()
+    }
     this.setState({
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
+      id: id
     })
+  }
+
+  shouldComponentUpdate (nextProps, nextState, nextContext) {
+    let notesFromStorage = JSON.parse(localStorage.getItem('notes'))
+    if (notesFromStorage === null) {
+      localStorage.setItem('notes', JSON.stringify([nextState]))
+    } else {
+      notesFromStorage = notesFromStorage.map((noteStore) => noteStore.id === nextState.id ? nextState : noteStore)
+      localStorage.setItem('notes', JSON.stringify(notesFromStorage))
+    }
+    return true
   }
 
   render () {
