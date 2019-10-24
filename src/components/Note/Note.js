@@ -12,20 +12,17 @@ class Note extends React.Component {
   }
 
   onChange = (e) => {
+    const note = {
+      id: this.state.id,
+      title:this.state.title,
+      text: this.state.text,
+      [e.target.name]: e.target.value,
+    }
     this.setState({
       [e.target.name]: e.target.value,
     })
-  }
 
-  shouldComponentUpdate (nextProps, nextState, nextContext) {
-    let notesFromStorage = JSON.parse(localStorage.getItem('notes'))
-    if (notesFromStorage === null) {
-      localStorage.setItem('notes', JSON.stringify([nextState]))
-    } else {
-      notesFromStorage = notesFromStorage.map((noteStore) => noteStore.id === nextState.id ? nextState : noteStore)
-      localStorage.setItem('notes', JSON.stringify(notesFromStorage))
-    }
-    return true
+    this.props.onUpdateNote(note)
   }
 
   render () {
@@ -40,9 +37,13 @@ class Note extends React.Component {
 }
 
 Note.propType = {
-  name: PropTypes.string,
-  text: PropTypes.string,
-  id: PropTypes.number
+  note: PropTypes.shape({
+    name: PropTypes.string,
+    text: PropTypes.string,
+    id: PropTypes.number
+  }),
+  onDeleteNote: PropTypes.func,
+  onUpdateNote: PropTypes.func,
 }
 
 export default Note

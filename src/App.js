@@ -5,9 +5,8 @@ class App extends React.Component {
 
   constructor (props) {
     super(props)
-    const notesFromStorage = localStorage.getItem('notes')
     this.state = {
-      notes: JSON.parse(notesFromStorage) || []
+      notes: []
     }
   }
 
@@ -19,17 +18,29 @@ class App extends React.Component {
     }
   }
 
+  getNotesFromStorage = () => {
+    const notesFromStorage = JSON.parse(localStorage.getItem('notes'))
+
+    return notesFromStorage ? notesFromStorage : []
+  }
+
+  setNotesToStorage = (notes) => {
+    localStorage.setItem('notes', JSON.stringify(notes))
+  }
+
   onAddClick = () => {
+    const notes = [...this.state.notes, this.getEmptyNote()]
     this.setState({
-        notes: [...this.state.notes, this.getEmptyNote()]
+        notes: notes
       }
     )
-    let notesFromStorage = JSON.parse(localStorage.getItem('notes'))
-    if (notesFromStorage === null) {
-      notesFromStorage = [];
-    }
-    notesFromStorage.push(this.getEmptyNote())
-    localStorage.setItem('notes', JSON.stringify(notesFromStorage))
+    this.setNotesToStorage(notes)
+  }
+
+  onUpdateNote = (note) => {
+    let notesFromStorage = this.getNotesFromStorage();
+    notesFromStorage = notesFromStorage.map((noteStore) => noteStore.id === note.id ? note : noteStore)
+    this.setNotesToStorage(notesFromStorage)
   }
 
   onDeleteNote = (note) => {
@@ -41,6 +52,12 @@ class App extends React.Component {
     localStorage.setItem('notes', JSON.stringify(notesFromStorage))
   }
 
+  componentDidMount () {
+    this.setState({
+      notes: this.getNotesFromStorage()
+    })
+  }
+
   render () {
     return (
       <React.Fragment>
@@ -48,7 +65,7 @@ class App extends React.Component {
           <button onClick={this.onAddClick}>Add</button>
         </div>
         <div>
-          <NotesList notes={this.state.notes} onDeleteNote={this.onDeleteNote} />
+          <NotesList notes={this.state.notes} onDeleteNote={this.onDeleteNote} onUpdateNote={this.onUpdateNote} />
         </div>
       </React.Fragment>
     )
