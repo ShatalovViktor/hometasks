@@ -11,7 +11,7 @@ Header.propTypes = {
 function Header (props) {
   return (
     <header className="App-header">
-      <Popup trigger={<button> Trigger</button>} modal closeOnDocumentClick>
+      <Popup trigger={<button> Add todo</button>} modal closeOnDocumentClick>
         <TodoItemForm/>
       </Popup>
     </header>
