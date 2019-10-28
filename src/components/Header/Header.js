@@ -1,6 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import './Header.css'
+import Popup from 'reactjs-popup'
+import TodoItemForm from '../TodoItemForm/TodoItemForm'
 
 Header.propTypes = {
 
@@ -9,7 +11,9 @@ Header.propTypes = {
 function Header (props) {
   return (
     <header className="App-header">
-      <button >Add</button>
+      <Popup trigger={<button> Trigger</button>} modal closeOnDocumentClick>
+        <TodoItemForm/>
+      </Popup>
     </header>
   )
 }
