@@ -1,0 +1,20 @@
+.App-header {
+    background-color: #282c34;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+}
+
+.App-header button {
+    float:right;
+    background-color: #4CAF50;
+    border: none;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 15px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    margin-right: 20px;
+}
