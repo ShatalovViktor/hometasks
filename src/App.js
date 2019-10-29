@@ -15,10 +15,16 @@ function App() {
     setTodos(newTodos)
   }
   
+  function onDoneClick (item) {
+    const itemTodo = { ...item, isDone:!item.isDone}
+    const newTodos = todos.map(el => el.id === itemTodo.id ? itemTodo : el)
+    setTodos(newTodos)
+  }
+  
   return (
     <div className="App">
       <Header addTodoItem={addTodoItem}/>
-      <TodoList todos={todos}/>
+      <TodoList todos={todos} onDeleteTodo={deleteTodoItem} onDoneClick={onDoneClick}/>
     </div>
   );
 }
