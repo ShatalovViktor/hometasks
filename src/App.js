@@ -7,7 +7,12 @@ function App() {
   const [todos, setTodos] = useState([])
 
   function addTodoItem (item) {
-    setTodos({...todos, item})
+    setTodos([...todos, item])
+  }
+
+  function deleteTodoItem(item) {
+    const newTodos = todos.filter(el => el !== item);
+    setTodos(newTodos)
   }
   
   return (

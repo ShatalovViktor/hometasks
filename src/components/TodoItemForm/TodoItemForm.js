@@ -8,19 +8,21 @@ TodoItemForm.propTypes = {
 }
 
 function TodoItemForm (props) {
-  const [todoItem, setTodoItem] = useState('');
+  const [todoItem, setTodoItem] = useState({})
+
   function onSubmit (e) {
     e.preventDefault()
     props.addTodoItem(todoItem)
-    props.closePopup(true);
+    props.closePopup(true)
   }
+
   function handleChange (e) {
-    setTodoItem(e.target.value)
+    setTodoItem({ id: Date.now(), text: e.target.value })
   }
 
   return (
     <form className='form-inline' method='post' onSubmit={onSubmit}>
-      <input type="text" name='todo' onChange={handleChange} value={todoItem}/>
+      <input type="text" name='todo' onChange={handleChange} value={todoItem.text} />
       <button className='save'>Save</button>
       <button className='reset' type='reset'>Clear</button>
     </form>

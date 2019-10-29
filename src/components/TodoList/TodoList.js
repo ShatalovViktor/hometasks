@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import TodoItem from '../TodoItem/TodoItem'
 
 TodoList.propTypes = {
   todos: PropTypes.array,  
@@ -7,7 +8,11 @@ TodoList.propTypes = {
 
 function TodoList (props) {
   return (
-    <div></div>
+    <div>
+      {props.todos.map(todo => (
+        <TodoItem key={todo.id} todo={todo} />
+      ))}
+    </div>
   )
 }
 
