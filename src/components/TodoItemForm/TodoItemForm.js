@@ -17,7 +17,7 @@ function TodoItemForm (props) {
   }
 
   function handleChange (e) {
-    setTodoItem({ id: Date.now(), text: e.target.value })
+    setTodoItem({ id: Date.now(), text: e.target.value, isDone:false })
   }
 
   function handleReset() {
