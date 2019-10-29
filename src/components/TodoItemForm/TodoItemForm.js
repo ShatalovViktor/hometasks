@@ -20,11 +20,15 @@ function TodoItemForm (props) {
     setTodoItem({ id: Date.now(), text: e.target.value })
   }
 
+  function handleReset() {
+    setTodoItem({})
+  }
+
   return (
     <form className='form-inline' method='post' onSubmit={onSubmit}>
       <input type="text" name='todo' onChange={handleChange} value={todoItem.text} />
       <button className='save'>Save</button>
-      <button className='reset' type='reset'>Clear</button>
+      <button className='reset' type='reset' onClick={handleReset}>Clear</button>
     </form>
   )
 }
