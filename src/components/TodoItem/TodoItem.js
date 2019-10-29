@@ -8,25 +8,26 @@ TodoItem.propTypes = {
     isDone: PropTypes.bool,
   }),
   onDeleteTodo: PropTypes.func,
-  onDoneClick:PropTypes.func,
+  onDoneClick: PropTypes.func,
 }
 
 function TodoItem (props) {
-  
+
   function onDone () {
     props.onDoneClick(props.todo)
   }
-  
+
   function onDeleteItem () {
     props.onDeleteTodo(props.todo)
   }
 
   return (
     <div style={itemStyle}>
-      <input type='checkbox' onClick={onDone} checked={props.todo.isDone}/>
+      <span style={{ padding: '10px' }}><input type='checkbox' onClick={onDone} checked={props.todo.isDone} /></span>
       {props.todo.text}
-      {/*<a onClick={om}>X</a>*/}
+      <span style={deleteStyle}>
       <button onClick={onDeleteItem}>X</button>
+      </span>
     </div>
   )
 }
@@ -37,5 +38,15 @@ const itemStyle = {
   textAlign: 'left',
   backgroundColor: 'white',
   color: 'black',
+  padding: '20px',
+  border: '1px solid black',
+  position: 'relative',
+  margin: '5px 10px',
+}
+
+const deleteStyle = {
+  position: 'absolute',
+  top: '0px',
+  right: '6px',
 }
 export default TodoItem

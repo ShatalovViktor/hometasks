@@ -10,7 +10,7 @@ TodoList.propTypes = {
 
 function TodoList (props) {
   return (
-    <div>
+    <div style={{paddingTop:'5px'}}>
       {props.todos.map(todo => (
         <TodoItem key={todo.id} todo={todo} onDeleteTodo={props.onDeleteTodo} onDoneClick={props.onDoneClick}/>
       ))}
