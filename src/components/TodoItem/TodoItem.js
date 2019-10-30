@@ -1,5 +1,7 @@
-import React  from 'react'
+import React, { useContext } from 'react'
 import PropTypes from 'prop-types'
+import { ThemeContext } from '../../contexts/theme'
+import './TodoItem.css'
 
 TodoItem.propTypes = {
   todo: PropTypes.shape({
@@ -12,6 +14,8 @@ TodoItem.propTypes = {
 }
 
 function TodoItem (props) {
+  const theme = useContext(ThemeContext)
+  console.log(theme)
 
   function onDone () {
     props.onDoneClick(props.todo)
@@ -22,7 +26,7 @@ function TodoItem (props) {
   }
 
   return (
-    <div style={itemStyle}>
+    <div className='todo-item' style={theme}>
       <span style={{ padding: '10px' }}><input type='checkbox' onClick={onDone} checked={props.todo.isDone} /></span>
       {props.todo.text}
       <span style={deleteStyle}>
@@ -30,18 +34,6 @@ function TodoItem (props) {
       </span>
     </div>
   )
-}
-
-const itemStyle = {
-  float: 'left',
-  width: '200px',
-  textAlign: 'left',
-  backgroundColor: 'white',
-  color: 'black',
-  padding: '20px',
-  border: '1px solid black',
-  position: 'relative',
-  margin: '5px 10px',
 }
 
 const deleteStyle = {
