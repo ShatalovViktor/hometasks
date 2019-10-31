@@ -24,9 +24,9 @@ function TodoItem (props) {
   function onDeleteItem () {
     props.onDeleteTodo(props.todo)
   }
-
+  const background = props.todo.isDone ? {backgroundColor: 'green'} : {backgroundColor: theme.background};
   return (
-    <div className='todo-item' style={theme}>
+    <div className='todo-item' style={{...background, theme}}>
       <span style={{ padding: '10px' }}><input type='checkbox' onClick={onDone} checked={props.todo.isDone} /></span>
       {props.todo.text}
       <span style={deleteStyle}>
