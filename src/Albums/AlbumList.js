@@ -21,7 +21,7 @@ function AlbumList (props) {
   return (
     <ul>
       {albums.map( album => (
-        <AlbumListItem key={albums.id} user={album}/>
+        <AlbumListItem key={albums.id} album={album}/>
       ))}
     </ul>
   )

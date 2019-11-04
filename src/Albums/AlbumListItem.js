@@ -12,7 +12,7 @@ function AlbumListItem ({album}) {
 
   return (
     <li>
-      <Link to={`${url}/${album.id}`}>{album.name}</Link>
+      <Link to={`${url}/${album.id}`}>{album.title}</Link>
     </li>
   )
 }
