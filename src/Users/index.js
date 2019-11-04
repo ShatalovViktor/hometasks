@@ -1,21 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import UserList from './UserList'
-import config from './config'
 import UserDetails from './UserDetails'
-import { Switch, Route, useRouteMatch, useParams } from 'react-router-dom'
+import { Switch, Route, useRouteMatch } from 'react-router-dom'
 
 Users.propTypes = {}
 
 function Users (props) {
 
   const { url } = useRouteMatch()
-
-  // useEffect(async () => {
-  //   const res = await fetch(config.usersUrl);
-  //   const data = await res.json();
-  //   setUsers(data);
-  // }, [])
 
   return (
     <div>
