@@ -10,7 +10,7 @@ function AlbumDetails ({albumId}) {
   const [album, setAlbum] = useState({})
 
   useEffect(() => {
-    fetch(`${config.albumsUrl}/${albumId}`)
+    fetch(`${config.photosUrl}/?albumId=${albumId}`)
       .then(res => res.json())
       .then(setAlbum)
   }, [])
