@@ -3,11 +3,9 @@ import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 import { useRouteMatch } from 'react-router-dom'
 
-UsersListItem.propTypes = {
-  
-}
+UsersListItem.propTypes = {}
 
-function UsersListItem ({user}) {
+function UsersListItem ({ user }) {
   const { url } = useRouteMatch()
 
   return (

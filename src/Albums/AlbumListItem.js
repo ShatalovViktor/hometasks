@@ -8,7 +8,7 @@ AlbumListItem.propTypes = {
   title: PropTypes.string,
 }
 
-function AlbumListItem ({album}) {
+function AlbumListItem ({ album }) {
   const { url } = useRouteMatch()
 
   return (

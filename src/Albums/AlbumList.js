@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import config from './config'
 import AlbumListItem from './AlbumListItem'
+import '../common/rightMenu.css'
 
 AlbumList.propTypes = {
   albums: PropTypes.array

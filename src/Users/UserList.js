@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import UsersListItem from './UsersListItem'
 import config from './config'
+import '../common/rightMenu.css'
 
 
 UserList.propTypes = {
