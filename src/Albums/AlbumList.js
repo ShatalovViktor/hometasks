@@ -4,7 +4,7 @@ import config from './config'
 import AlbumListItem from './AlbumListItem'
 
 AlbumList.propTypes = {
-  users: PropTypes.array
+  albums: PropTypes.array
 }
 
 function AlbumList (props) {

@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom'
 import { useRouteMatch } from 'react-router-dom'
 
 AlbumListItem.propTypes = {
-  
+  id: PropTypes.number,
+  title: PropTypes.string,
 }
 
 function AlbumListItem ({album}) {
