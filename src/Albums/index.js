@@ -11,8 +11,7 @@ function Albums (props) {
   const { url } = useRouteMatch()
 
   return (
-    <div className='main'>
-      <h2>Albums module</h2>
+    <div className='container'>
       <Switch>
         <Route path={`${url}/:id`} render={({ match }) => {
           return <AlbumDetails albumId={match.params.id} />
@@ -21,6 +20,9 @@ function Albums (props) {
           return <AlbumList />
         }} />
       </Switch>
+      <div className='main'>
+        <h2>Albums module</h2>
+      </div>
     </div>
   )
 }

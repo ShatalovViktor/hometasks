@@ -1,20 +1,23 @@
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    width: 200px;
-    background-color: #f1f1f1;
+.sidenav {
+    width: 30%;
+    background: #eee;
+    overflow-x: hidden;
+    padding: 8px 0;
+    float:left;
 }
 
-li a {
-    display: block;
-    color: #000;
-    padding: 8px 16px;
+.sidenav a {
+    padding: 6px 8px 6px 16px;
     text-decoration: none;
+    font-size: 25px;
+    color: #2196F3;
+    display: block;
 }
 
-/* Change the link color on hover */
-li a:hover {
-    background-color: #555;
-    color: white;
+.sidenav a:hover {
+    color: #064579;
+}
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
 }

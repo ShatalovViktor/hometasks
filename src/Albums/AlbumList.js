@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import config from './config'
 import AlbumListItem from './AlbumListItem'
-import '../common/rightMenu.css'
+import '../common/leftMenu.css'
 
 AlbumList.propTypes = {
   albums: PropTypes.array
@@ -20,11 +20,11 @@ function AlbumList (props) {
 
 
   return (
-    <ul>
+    <div className='sidenav'>
       {albums.map( album => (
         <AlbumListItem key={album.id} album={album}/>
       ))}
-    </ul>
+    </div>
   )
 }
 

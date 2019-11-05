@@ -9,14 +9,12 @@ import Albums from './Albums/'
 function App () {
   return (
     <Router>
-      <div>
         <Header/>
         <Switch>
           <Route path="/albums" component={Albums}/>
           <Route path="/users" component={Users}/>
           <Route path="/" component={Home}/>
         </Switch>
-      </div>
     </Router>
   )
 }

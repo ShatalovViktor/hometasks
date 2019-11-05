@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import UsersListItem from './UsersListItem'
 import config from './config'
-import '../common/rightMenu.css'
+import '../common/leftMenu.css'
 
 
 UserList.propTypes = {
@@ -21,11 +21,11 @@ function UserList (props) {
 
 
   return (
-    <ul>
+    <div className='sidenav'>
       {users.map( user => (
         <UsersListItem key={user.id} user={user}/>
       ))}
-    </ul>
+    </div>
   )
 }
 

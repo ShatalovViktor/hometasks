@@ -12,9 +12,7 @@ function AlbumListItem ({ album }) {
   const { url } = useRouteMatch()
 
   return (
-    <li>
-      <Link to={`${url}/${album.id}`}>{album.title}</Link>
-    </li>
+    <Link to={`${url}/${album.id}`}>{album.title}</Link>
   )
 }
 

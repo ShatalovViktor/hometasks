@@ -9,9 +9,7 @@ function UsersListItem ({ user }) {
   const { url } = useRouteMatch()
 
   return (
-    <li>
       <Link to={`${url}/${user.id}`}>{user.name}</Link>
-    </li>
   )
 }
 

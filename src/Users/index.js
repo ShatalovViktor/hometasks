@@ -11,8 +11,7 @@ function Users (props) {
   const { url } = useRouteMatch()
 
   return (
-    <div>
-      <h2>Users module</h2>
+    <div className='container'>
       <Switch>
         <Route path={`${url}/:id`} render={({ match }) => {
           return <UserDetails userId={match.params.id} />
@@ -21,6 +20,9 @@ function Users (props) {
           return <UserList />
         }} />
       </Switch>
+      <div className='main'>
+        <h2>Users module</h2>
+      </div>
     </div>
   )
 }
