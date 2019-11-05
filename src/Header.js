@@ -1,10 +1,7 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import { NavLink } from 'react-router-dom'
 
-Header.propTypes = {}
-
-function Header (props) {
+function Header () {
   return (
     <header className='topnav'>
       <NavLink exact to="/" activeClassName='active'>Home</NavLink>
