@@ -17,9 +17,6 @@ function Users () {
           return <UserList />
         }} />
       </Switch>
-      <div className='main'>
-        <h2>Users module</h2>
-      </div>
     </div>
   )
 }

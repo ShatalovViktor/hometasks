@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import config from './config'
 
 UserDetails.propTypes = {
-  userId: PropTypes.number,
+  userId: PropTypes.string,
 }
 
 function UserDetails ({userId}) {
@@ -15,11 +15,14 @@ function UserDetails ({userId}) {
       .then(setUser)
   }, [])
 
-
   return (
-    <div>
-      <h3>User Details</h3>
-      <h4>{user.name}</h4>
+    <div className='main'>
+      <p><b>User name: </b><span>{user.name}</span></p>
+      <p><b>User username: </b><span>{user.username}</span></p>
+      <p><b>User email: </b><span>{user.email}</span></p>
+      <p><b>User phone: </b><span>{user.phone}</span></p>
+      <p><b>User website: </b><span>{user.website}</span></p>
+      <p><b>User company name: </b><span>{user.company ? user.company.name : ''}</span></p>
     </div>
   )
 }

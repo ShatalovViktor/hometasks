@@ -3,13 +3,18 @@ import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 import { useRouteMatch } from 'react-router-dom'
 
-UsersListItem.propTypes = {}
+UsersListItem.propTypes = {
+  user: PropTypes.shape({
+    name: PropTypes.string,
+    id: PropTypes.string,
+  })
+}
 
 function UsersListItem ({ user }) {
   const { url } = useRouteMatch()
 
   return (
-      <Link to={`${url}/${user.id}`}>{user.name}</Link>
+    <Link to={`${url}/${user.id}`}>{user.name}</Link>
   )
 }
 

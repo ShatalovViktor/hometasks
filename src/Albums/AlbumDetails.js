@@ -4,7 +4,7 @@ import config from './config'
 import PhotoList from './PhotoList'
 
 AlbumDetails.propTypes = {
-  albumId:PropTypes.number,
+  albumId:PropTypes.string,
 }
 
 function AlbumDetails ({albumId}) {
