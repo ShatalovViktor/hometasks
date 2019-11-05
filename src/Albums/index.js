@@ -1,12 +1,9 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import AlbumDetails from './AlbumDetails'
 import { Switch, Route, useRouteMatch } from 'react-router-dom'
 import AlbumList from './AlbumList'
 
-Albums.propTypes = {}
-
-function Albums (props) {
+function Albums () {
 
   const { url } = useRouteMatch()
 

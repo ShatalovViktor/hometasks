@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import config from './config'
 
 UserDetails.propTypes = {
-  
+  userId: PropTypes.number,
 }
 
 function UserDetails ({userId}) {

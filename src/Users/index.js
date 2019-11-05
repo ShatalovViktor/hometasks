@@ -1,12 +1,9 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import UserList from './UserList'
 import UserDetails from './UserDetails'
 import { Switch, Route, useRouteMatch } from 'react-router-dom'
 
-Users.propTypes = {}
-
-function Users (props) {
+function Users () {
 
   const { url } = useRouteMatch()
 

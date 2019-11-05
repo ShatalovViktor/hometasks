@@ -1,15 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import PropTypes from 'prop-types'
 import UsersListItem from './UsersListItem'
 import config from './config'
 import '../common/leftMenu.css'
 
-
-UserList.propTypes = {
-  users: PropTypes.array
-}
-
-function UserList (props) {
+function UserList () {
   const [users, setUsers] = useState([])
 
 
