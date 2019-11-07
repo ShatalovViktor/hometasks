@@ -6,7 +6,7 @@ import { useRouteMatch } from 'react-router-dom'
 UsersListItem.propTypes = {
   user: PropTypes.shape({
     name: PropTypes.string,
-    id: PropTypes.string,
+    id: PropTypes.number,
   })
 }
 
