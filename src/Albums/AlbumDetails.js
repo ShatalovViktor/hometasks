@@ -18,9 +18,8 @@ function AlbumDetails ({albumId}) {
 
 
   return (
-    <div>
-      <h3>Album Details</h3>
-      <h4>{album.name}</h4>
+    <div className='main'>
+      <h3>{album.title}</h3>
       <PhotoList albumId={albumId}/>
     </div>
   )
