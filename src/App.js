@@ -7,6 +7,7 @@ import { deepOrange } from '@material-ui/core/colors'
 import './App.css'
 import PostList from './components/PostList'
 import PostDetail from './components/PostDetail'
+import Header from './components/Header'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -30,20 +31,12 @@ function App () {
     <ThemeProvider theme={theme}>
       <Router>
         <Grid container className={classes.root} spacing={2}>
-          <Grid item xs={12}>
-            <AppBar position="static">
-              <Toolbar>
-                <Typography variant="h6">
-                  Posts
-                </Typography>
-              </Toolbar>
-            </AppBar>
-            <Switch>
-              <Route path='/posts/:id' component={PostDetail} />
-              <Route path='/posts' component={PostList} />
-              <Route path='/' render={() => <Redirect to="/posts" />} />
-            </Switch>
-          </Grid>
+          <Header />
+          <Switch>
+            <Route path='/posts/:id' component={PostDetail} />
+            <Route path='/posts' component={PostList} />
+            <Route path='/' render={() => <Redirect to="/posts" />} />
+          </Switch>
         </Grid>
       </Router>
     </ThemeProvider>
