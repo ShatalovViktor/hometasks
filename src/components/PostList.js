@@ -1,13 +1,31 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React, { useEffect, useState } from 'react'
+import { Grid, makeStyles, Paper } from '@material-ui/core'
+import axios from 'axios'
 
-PostList.propTypes = {
+const useStyles = makeStyles(theme => ({
+  paper: {
+    padding: theme.spacing(2),
+    textAlign: 'center',
+    color: theme.palette.text.secondary,
+  },
+}))
 
-}
+function PostList (props, context) {
+  const [posts, setPosts] = useState([])
+  const classes = useStyles
 
-function PostList (props) {
+  useEffect(() => {
+    axios.get('https://jsonplaceholder.typicode.com/posts')
+      .then(res => {setPosts(res.data)})
+  }, [])
   return (
-    <div></div>
+    <>
+      {posts.map(post => (
+        <Grid item xs={4}>
+          <Paper key={post.id} className={classes.paper}>{post.title}</Paper>
+        </Grid>
+      ))}
+    </>
   )
 }
 

@@ -30,7 +30,7 @@ function App () {
   return (
     <ThemeProvider theme={theme}>
       <Router>
-        <Grid container className={classes.root} spacing={2}>
+        <Grid container className={classes.root} spacing={3}>
           <Header />
           <Switch>
             <Route path='/posts/:id' component={PostDetail} />
