@@ -5,9 +5,9 @@ import { ThemeProvider, createMuiTheme, makeStyles } from '@material-ui/core/sty
 
 import { deepOrange } from '@material-ui/core/colors'
 import './App.css'
-import PostList from './components/PostList'
-import PostDetail from './components/PostDetail'
-import Header from './components/Header'
+import PostList from './components/Posts/PostList'
+import PostDetail from './components/Posts/PostDetail'
+import Header from './components/common/Header'
 
 const useStyles = makeStyles(theme => ({
   root: {
