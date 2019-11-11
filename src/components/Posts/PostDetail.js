@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Typography, Grid } from '@material-ui/core'
 import axios from 'axios'
+import CommentList from '../Comments/CommentList'
 
 function PostDetail ({ id }) {
   const [post, setPost] = useState({
@@ -13,7 +14,7 @@ function PostDetail ({ id }) {
       .then(res => {
         setPost(res.data)
       })
-  }, [])
+  }, [id])
 
   return (
     <>
@@ -26,6 +27,9 @@ function PostDetail ({ id }) {
         <Typography variant='body1' align='left'>
           {post.body}
         </Typography>
+      </Grid>
+      <Grid item xs={10}>
+        <CommentList postId={post.id} />
       </Grid>
     </>
   )

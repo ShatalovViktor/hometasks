@@ -1,6 +1,6 @@
 import React from 'react'
 import { Switch, Route, Redirect, BrowserRouter as Router } from 'react-router-dom'
-import { Toolbar, Typography, AppBar, Grid } from '@material-ui/core'
+import { Grid } from '@material-ui/core'
 import { ThemeProvider, createMuiTheme, makeStyles } from '@material-ui/core/styles'
 
 import { deepOrange } from '@material-ui/core/colors'
