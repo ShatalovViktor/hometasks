@@ -9,10 +9,19 @@ function PostDetail ({ id }) {
     body: '',
   })
 
+  const [comments, setComments] = useState([])
+
   useEffect(() => {
     axios.get(`https://jsonplaceholder.typicode.com/posts/${id}`)
       .then(res => {
         setPost(res.data)
+      })
+  }, [id])
+
+  useEffect(() => {
+    axios.get(`https://jsonplaceholder.typicode.com/comments?postId=${id}`)
+      .then(res => {
+        setComments(res.data)
       })
   }, [id])
 
@@ -29,7 +38,7 @@ function PostDetail ({ id }) {
         </Typography>
       </Grid>
       <Grid item xs={10}>
-        <CommentList postId={post.id} />
+        <CommentList comments={comments} />
       </Grid>
     </>
   )

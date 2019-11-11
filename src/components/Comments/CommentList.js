@@ -1,22 +1,14 @@
-import React, { useEffect, useState } from 'react'
-import axios from 'axios'
+import React from 'react'
+import List from '@material-ui/core/List'
 import CommentListItem from './CommentListItem'
 
-function CommentList ({ postId }) {
-  const [comments, setComments] = useState([])
-  useEffect(() => {
-    axios.get(`https://jsonplaceholder.typicode.com/comments?postId=${postId}`)
-      .then(res => {
-        setComments(res.data)
-      })
-  }, [postId])
-
+function CommentList ({ comments }) {
   return (
-    <>
+    <List>
       {comments.map(comment => (
         <CommentListItem key={comment.id} comment={comment} />
       ))}
-    </>
+    </List>
   )
 }
 
