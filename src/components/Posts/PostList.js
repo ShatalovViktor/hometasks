@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react'
-import axios from 'axios'
+import api from '../../api'
 import PostListItem from './PostListItem'
 
 function PostList (props, context) {
   const [posts, setPosts] = useState([])
 
   useEffect(() => {
-    axios.get('https://jsonplaceholder.typicode.com/posts')
+    api.get('posts')
       .then(res => {setPosts(res.data)})
   }, [])
 

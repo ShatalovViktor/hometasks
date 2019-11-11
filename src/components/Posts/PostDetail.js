@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Typography, Grid } from '@material-ui/core'
-import axios from 'axios'
+import api from '../../api'
 import CommentList from '../Comments/CommentList'
 import CommentForm from '../Comments/CommentForm'
 
@@ -13,14 +13,14 @@ function PostDetail ({ id }) {
   const [comments, setComments] = useState([])
 
   useEffect(() => {
-    axios.get(`https://jsonplaceholder.typicode.com/posts/${id}`)
+    api.get(`posts/${id}`)
       .then(res => {
         setPost(res.data)
       })
   }, [id])
 
   useEffect(() => {
-    axios.get(`https://jsonplaceholder.typicode.com/comments?postId=${id}`)
+    api.get(`comments?postId=${id}`)
       .then(res => {
         setComments(res.data)
       })
