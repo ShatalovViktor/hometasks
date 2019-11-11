@@ -16,7 +16,7 @@ function PostDetail ({ id }) {
   }, [])
 
   return (
-    <Grid container spacing={3}>
+    <>
       <Grid item xs={12}>
         <Typography variant='h3' component='h3'>
           {post.title}
@@ -27,7 +27,7 @@ function PostDetail ({ id }) {
           {post.body}
         </Typography>
       </Grid>
-    </Grid>
+    </>
   )
 }
 
