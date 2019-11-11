@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { ListItem, ListItemAvatar, ListItemText, Avatar, Typography, Divider } from '@material-ui/core'
+import { ListItem, ListItemText, Typography, Divider } from '@material-ui/core'
 
 CommentListItem.propTypes = {
   id: PropTypes.number,
@@ -14,9 +14,6 @@ function CommentListItem ({ comment }) {
   return (
     <React.Fragment>
       <ListItem alignItems="flex-start">
-        <ListItemAvatar>
-          <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
-        </ListItemAvatar>
         <ListItemText
           primary={comment.name}
           secondary={
@@ -26,9 +23,9 @@ function CommentListItem ({ comment }) {
                 variant="body2"
                 color="textPrimary"
               >
-                Ali Connors
+                {comment.body}
               </Typography>
-              {' — ' + comment.body}
+              {' — ' + comment.email}
             </React.Fragment>
           }
         />
