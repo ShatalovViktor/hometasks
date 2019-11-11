@@ -33,7 +33,9 @@ function App () {
         <Grid container className={classes.root} spacing={3}>
           <Header />
           <Switch>
-            <Route path='/posts/:id' component={PostDetail} />
+            <Route path='/posts/:id' render={({match}) => {
+              return <PostDetail id={match.params.id} />
+            }} />
             <Route path='/posts' component={PostList} />
             <Route path='/' render={() => <Redirect to="/posts" />} />
           </Switch>

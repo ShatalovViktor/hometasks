@@ -1,13 +1,33 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React, { useEffect, useState } from 'react'
+import { Typography, Grid } from '@material-ui/core'
+import axios from 'axios'
 
-PostDetail.propTypes = {
-  
-}
+function PostDetail ({ id }) {
+  const [post, setPost] = useState({
+    title: '',
+    body: '',
+  })
 
-function PostDetail (props) {
+  useEffect(() => {
+    axios.get(`https://jsonplaceholder.typicode.com/posts/${id}`)
+      .then(res => {
+        setPost(res.data)
+      })
+  }, [])
+
   return (
-    <div></div>
+    <Grid container spacing={3}>
+      <Grid item xs={12}>
+        <Typography variant='h3' component='h3'>
+          {post.title}
+        </Typography>
+      </Grid>
+      <Grid item xs={12}>
+        <Typography variant='body1' align='left'>
+          {post.body}
+        </Typography>
+      </Grid>
+    </Grid>
   )
 }
 
