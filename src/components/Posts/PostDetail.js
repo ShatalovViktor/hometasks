@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Typography, Grid } from '@material-ui/core'
 import axios from 'axios'
 import CommentList from '../Comments/CommentList'
+import CommentForm from '../Comments/CommentForm'
 
 function PostDetail ({ id }) {
   const [post, setPost] = useState({
@@ -39,6 +40,9 @@ function PostDetail ({ id }) {
       </Grid>
       <Grid item xs={10}>
         <CommentList comments={comments} />
+      </Grid>
+      <Grid item xs={10}>
+        <CommentForm/>
       </Grid>
     </>
   )
