@@ -25,6 +25,10 @@ function PostDetail ({ id }) {
         setComments(res.data)
       })
   }, [id])
+  
+  function handleAddComment(comment) {
+    setComments([...comments, comment])
+  }
 
   return (
     <>
@@ -42,7 +46,7 @@ function PostDetail ({ id }) {
         <CommentList comments={comments} />
       </Grid>
       <Grid item xs={10}>
-        <CommentForm/>
+        <CommentForm addCommentCallback={handleAddComment} />
       </Grid>
     </>
   )

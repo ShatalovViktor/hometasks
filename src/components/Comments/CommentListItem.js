@@ -7,7 +7,6 @@ CommentListItem.propTypes = {
   name: PropTypes.string,
   email: PropTypes.string,
   body: PropTypes.string,
-  userId: PropTypes.number
 }
 
 function CommentListItem ({ comment }) {
