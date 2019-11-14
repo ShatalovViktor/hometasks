@@ -31,6 +31,7 @@ function CommentForm ({ addCommentCallback }) {
   return (
     <Formik
       initialValues={{ name: '', email: '', body: '' }}
+
       onSubmit={(values, { setSubmitting }) => {
         api.post('comments', { values }).then(
           res => {
@@ -56,6 +57,7 @@ function CommentForm ({ addCommentCallback }) {
             </Field>
             <ErrorMessage name="name" component="div" />
           </FormControl>
+
           <FormControl>
             <InputLabel htmlFor="email">Email</InputLabel>
             <Field id="email" type="email" name="email" validate={validateEmail}>
@@ -63,25 +65,16 @@ function CommentForm ({ addCommentCallback }) {
             </Field>
             <ErrorMessage name="email" component="div" />
           </FormControl>
+
           <FormControl>
             <InputLabel htmlFor="body">Comment</InputLabel>
             <Field id="body" type="text" name="body" validate={validateRequiredField}>
-              {
-                ({ field, form, meta }) => <Input {...field}
-                                                  multiline={true}
-                                                  rows={1}
-                                                  rowsMax={4}
-                />
-              }
+              {({ field, form, meta }) => <Input {...field} multiline={true} rows={1} rowsMax={4} />}
             </Field>
             <ErrorMessage name="body" component="div" />
           </FormControl>
-          <Button
-            variant="contained"
-            color="primary"
-            type="submit"
-            disabled={isSubmitting}
-          >
+
+          <Button variant="contained" color="primary" type="submit" disabled={isSubmitting}>
             Send
           </Button>
 
