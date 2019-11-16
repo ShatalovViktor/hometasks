@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import List from './List';
-import { removeTodo } from '../store/todos/actions';
+import { removeTodo } from '../../store/todos/actions';
 
 function mapStateToProps(state){
   return {

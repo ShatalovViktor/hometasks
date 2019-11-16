@@ -1,4 +1,4 @@
-import { TODOS_TOGGLE_ITEM, TODOS_REMOVE_ITEM } from './actions'
+import { TODOS_TOGGLE_ITEM, TODOS_REMOVE_ITEM, TODOS_ADD_ITEM } from './actions'
 
 const initState = [
   {
@@ -21,11 +21,12 @@ const initState = [
 export default function (state = initState, { type, payload }) {
   switch (type) {
     case TODOS_REMOVE_ITEM:
-      console.log(state)
-      console.log(typeof payload, payload)
       return state.filter(todo => todo.id != payload)
     case TODOS_TOGGLE_ITEM:
-      return {}
+      const itemTodo = { ...payload, isDone: !payload.isDone }
+      return state.map(todo => todo.id === itemTodo.id ? itemTodo : todo);
+    case TODOS_ADD_ITEM:
+      return [ ...state, payload]
     default: return state;
   }
 }

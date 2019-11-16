@@ -5,7 +5,7 @@ Form.propTypes = {
 
 }
 
-function Form (props) {
+function Form ({add}) {
   return (
     <div>Form</div>
   )

@@ -2,9 +2,9 @@ import React from 'react'
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 
-import Filters from './components/Filters'
-import ListContainer from './components/ListContainer'
-import Form from './components/Form'
+import Filters from './components/Filters/Filters'
+import ListContainer from './components/Todo/ListContainer'
+import Form from './components/Todo/Form'
 import rootReducer from './store/reducer'
 
 const store = createStore(rootReducer)
