@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import PropTypes from 'prop-types'
-import { Grid, Paper, Typography, Checkbox, FormControlLabel, Chip } from '@material-ui/core'
+import { Grid, Paper, Checkbox, FormControlLabel, Chip } from '@material-ui/core'
 import ThemeContext from '../../theme'
 
 Item.propTypes = {}
