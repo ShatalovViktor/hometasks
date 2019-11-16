@@ -19,9 +19,6 @@ const initState = [
 ]
 
 export default function (state = initState, { type, payload }) {
-  console.log('state -', state)
-  console.log('type - ', type);
-  console.log('payload - ', payload);
   switch (type) {
     case TODOS_REMOVE_ITEM:
       return state.filter(todo => todo.id != payload)
