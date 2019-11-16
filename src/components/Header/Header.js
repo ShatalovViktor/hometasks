@@ -1,5 +1,5 @@
 import React from 'react'
-import {AppBar, Toolbar, Typography} from '@material-ui/core'
+import { AppBar, Toolbar, Typography } from '@material-ui/core'
 import PropTypes from 'prop-types'
 import Filters from '../Filters/Filters'
 
@@ -10,7 +10,7 @@ function Header () {
         <Typography variant="h6">
           Redux todo list
         </Typography>
-        <Filters/>
+        <Filters />
       </Toolbar>
     </AppBar>
   )
