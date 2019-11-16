@@ -19,12 +19,16 @@ const initState = [
 ]
 
 export default function (state = initState, { type, payload }) {
+  console.log('state -', state)
+  console.log('type - ', type);
+  console.log('payload - ', payload);
   switch (type) {
     case TODOS_REMOVE_ITEM:
       return state.filter(todo => todo.id != payload)
     case TODOS_TOGGLE_ITEM:
       const itemTodo = { ...payload, isDone: !payload.isDone }
-      return state.map(todo => todo.id === itemTodo.id ? itemTodo : todo);
+      return state.map(el => el.id === itemTodo.id ? itemTodo : el);
+
     case TODOS_ADD_ITEM:
       return [ ...state, payload]
     default: return state;

@@ -9,7 +9,15 @@ function List ({todos, remove, toggle}) {
   return (
     <div>
       {todos.map(todo => (
-        <div key={todo.id} onClick={remove.bind(null, todo.id)}>{todo.title}</div>
+        <div
+          style={{
+            textDecoration: todo.isDone ? 'line-through' : 'none'
+          }}
+          key={todo.id}
+          onClick={toggle.bind(null, todo)}
+        >
+          {todo.title}
+        </div>
       ))}
     </div>
   )
