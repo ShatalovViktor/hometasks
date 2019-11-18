@@ -3,7 +3,9 @@ import { FormControl, InputLabel, Select, MenuItem, makeStyles, Grid } from '@ma
 import { FILTER_ALL, FILTER_NOT_DONE, FILTER_DONE } from '../../filters'
 import PropTypes from 'prop-types'
 
-Filters.propTypes = {}
+Filters.propTypes = {
+  setFilter: PropTypes.func
+}
 const useStyles = makeStyles(theme => ({
   formControl: {
     margin: theme.spacing(1),

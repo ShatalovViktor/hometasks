@@ -4,7 +4,15 @@ import PropTypes from 'prop-types'
 import ThemeContext from '../../theme'
 import Item from './Item'
 
-List.propTypes = {}
+List.propTypes = {
+  todos: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.number,
+    title: PropTypes.string,
+    isDone: PropTypes.bool
+  })),
+  remove: PropTypes.func,
+  toggle: PropTypes.func,
+}
 
 function List ({ todos, remove, toggle }) {
   const theme = useContext(ThemeContext)

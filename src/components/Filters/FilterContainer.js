@@ -10,7 +10,7 @@ function mapStateToProps(state, ownProps){
 }
 
 const mapDispatchToProps = {
-  setFilter: setFilter,
+  setFilter,
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Filters);

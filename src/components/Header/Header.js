@@ -1,6 +1,5 @@
 import React from 'react'
 import { AppBar, Toolbar, Typography, Grid } from '@material-ui/core'
-import PropTypes from 'prop-types'
 import FilterContainer from '../Filters/FilterContainer'
 
 function Header () {

@@ -3,7 +3,13 @@ import PropTypes from 'prop-types'
 import { Grid, Paper, Checkbox, FormControlLabel, Chip } from '@material-ui/core'
 import ThemeContext from '../../theme'
 
-Item.propTypes = {}
+Item.propTypes = {
+  todo: PropTypes.shape({
+    id: PropTypes.number,
+    title: PropTypes.string,
+    isDone: PropTypes.bool
+  })
+}
 
 function Item ({ todo, onDone, onDelete }) {
   const theme = useContext(ThemeContext)
