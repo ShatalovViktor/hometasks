@@ -9,12 +9,8 @@ function mapStateToProps(state, ownProps){
   }
 }
 
-const mapDispatchToProps = (dispatch, ownProps) => {
-  return {
-    onChange: () => {
-      dispatch(setFilter(ownProps.filter))
-    }
-  }
+const mapDispatchToProps = {
+  setFilter: setFilter,
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Filters);
