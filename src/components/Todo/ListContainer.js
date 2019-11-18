@@ -8,9 +8,9 @@ const getVisibleTodos = (todos, filter) => {
     case FILTER_ALL:
       return todos
     case FILTER_DONE:
-      return todos.filter(todo => todo.completed)
+      return todos.filter(todo => todo.isDone)
     case FILTER_NOT_DONE:
-      return todos.filter(todo => !todo.completed)
+      return todos.filter(todo => !todo.isDone)
     default:
       return todos
   }
