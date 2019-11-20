@@ -5,7 +5,7 @@ import { Container } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
 import ThemeContext from './theme'
 import ListContainer from './components/Todo/ListContainer'
-import Form from './components/Todo/Form'
+import FormContainer from './components/Todo/FormContainer'
 import rootReducer from './store/reducer'
 import Header from './components/Header/Header'
 
@@ -29,7 +29,7 @@ function App () {
         <Container maxWidth="lg" className={useStyles.root}>
           <Header />
           <ListContainer />
-          <Form />
+          <FormContainer />
         </Container>
       </ThemeContext.Provider>
     </Provider>

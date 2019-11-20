@@ -1,10 +1,9 @@
 import { connect } from 'react-redux';
-import Form from './Form';
+import AddTodoForm from './AddTodoForm';
 import { addTodo } from '../../store/todos/actions';
 
-function mapStateToProps(state){
+function mapStateToProps(){
   return {
-    todos: state.todos
   }
 }
 
@@ -12,4 +11,4 @@ const mapDispatchToProps = {
   add: addTodo,
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Form);
+export default connect(mapStateToProps, mapDispatchToProps)(AddTodoForm);
