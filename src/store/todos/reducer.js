@@ -5,11 +5,15 @@ export default function (state = [], { type, payload }) {
     case TODOS_REMOVE_ITEM:
       return state.filter(todo => todo.id !== payload)
     case TODOS_TOGGLE_ITEM:
-      const itemTodo = { ...payload, isDone: !payload.isDone }
-      return state.map(el => el.id === itemTodo.id ? itemTodo : el);
+      console.log(state)
+      console.log(payload)
+      return state.map(el => el.id === payload ?
+        {...el, isDone: !el.isDone} :
+        el);
     case TODOS_ADD_ITEM:
       const newTodo = {
         ...payload,
+        isDone: false,
         id: Date.now(),
       }
       return [ ...state, newTodo]

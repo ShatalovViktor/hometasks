@@ -8,10 +8,12 @@ Item.propTypes = {
     id: PropTypes.number,
     title: PropTypes.string,
     isDone: PropTypes.bool
-  })
+  }),
+  onToggle: PropTypes.func,
+  onDelete: PropTypes.func
 }
 
-function Item ({ todo, onDone, onDelete }) {
+function Item ({ todo, onToggle, onDelete }) {
   const theme = useContext(ThemeContext)
   return (
     <Grid item xs={4}>
@@ -20,7 +22,7 @@ function Item ({ todo, onDone, onDelete }) {
           control={
             <Checkbox
               checked={todo.isDone}
-              onChange={onDone.bind(null, todo)}
+              onChange={onToggle.bind(null, todo.id)}
               value={todo.id} inputProps={{
               'aria-label': 'primary checkbox',
             }}

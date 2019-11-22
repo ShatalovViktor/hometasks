@@ -21,7 +21,7 @@ function List ({ todos, remove, toggle }) {
       <Grid item xs={12}>
         <Grid container spacing={3}>
           {todos.map(todo => (
-            <Item key={todo.id} todo={todo} onDone={toggle} onDelete={remove}/>
+            <Item key={todo.id} todo={todo} onToggle={toggle} onDelete={remove}/>
           ))}
         </Grid>
       </Grid>
